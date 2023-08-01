@@ -1,0 +1,36 @@
+*{
+    margin:0px;
+    color:#2c2c2c;
+}
+@font-face {
+    font-family: Radwave;
+    src: url(Radwave.otf);
+}
+h1{
+    font-family:Radwave;
+}
+p{
+    font-family:Radwave;
+}
+/* CSS */
+.button-33 {
+    background-color: #2c2c2c;
+    border-radius: 100px;
+    color: #ffcdb1;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Radwave;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+    .button-33:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
