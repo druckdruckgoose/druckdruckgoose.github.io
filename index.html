@@ -12,7 +12,10 @@
 <body style="background-color: #FFCDB1">
     <center>
         <img src="logo.png" style="width:200px;" />
-        <a href="https://www.etsy.com/shop/DruckDruckGoose" target="_blank" rel="noopener noreferrer">
+        <a style="display:block; text-decoration:none;" href="https://www.instagram.com/druckdruckgoosejewelry/" target="_blank" rel="noopener noreferrer">
+            <p id="demo" style="color: #2c2c2c; text-decoration: none; font-size: 40px; padding-top:200px; padding-bottom:100px;"></p>
+        </a>
+        <a style="display:none;" href="https://www.etsy.com/shop/DruckDruckGoose" target="_blank" rel="noopener noreferrer">
             <img src="bannert.png" style="width:100%" />
         </a>
         <img src="divider2.png" style="width:100%; margin-top:150px;" />
@@ -73,6 +76,28 @@
         <br />
         <p>That's all folks</p>
     </center>
-    
+    <script>
+        var countDownDate = new Date("Aug 31, 2023 14:30:00").getTime();
+
+        var x = setInterval(function () {
+
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "Fall drop out now!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
