@@ -11,14 +11,14 @@
 </head>
 <body style="background-color: #FFCDB1">
     <center>
-        <img src="logo.png" style="width:200px;" />
-        <a style="display:block; text-decoration:none;" href="https://www.instagram.com/druckdruckgoosejewelry/" target="_blank" rel="noopener noreferrer">
-            <p id="demo" style="color: #2c2c2c; text-decoration: none; font-size: 40px; padding-top:200px; padding-bottom:100px;">CLAY JEWELRY</p>
-        </a>
+        <div style="background: rgba(255, 205, 177, 0.58); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10.3px); -webkit-backdrop-filter: blur(10.3px); border: 1px solid rgba(255, 205, 177, 0.3); position:sticky;">
+            <img src="fav.ico" style="width:50px; padding:20px;" />
+        </div>
+        <img id="slideshow" src="backgrounds/1.png" style="width:100%; margin-top:-25px;" />
         <a style="display:none;" href="https://www.etsy.com/shop/DruckDruckGoose" target="_blank" rel="noopener noreferrer">
             <img src="bannert.png" style="width:100%" />
         </a>
-        <img src="divider2.png" style="width:100%; margin-top:150px;" />
+        <img src="divider2.png" style="width:100%; margin-top:-15px;" />
         <h1 style="margin-top:150px;">Made With Quality</h1>
         <br />
         <p style="margin-bottom:50px;">
@@ -37,7 +37,7 @@
         <h1 style="margin-top:100px;">Check out all the products!</h1>
         <br />
         <br />
-        <a href="https://www.etsy.com/shop/DruckDruckGoose" target="_blank" rel="noopener noreferrer"><button class="button-33" role="button">Open The Etsy Shop</button></a>
+        <a href="https://www.etsy.com/shop/DruckDruckGoose" target="_blank" rel="noopener noreferrer"><button class="button-33" role="button">Etsy Shop</button></a>
         <br />
         <br />
         <br />
@@ -45,12 +45,21 @@
         <br />
         <br />
         <img src="divider3.png" style="width:100%" />
-        <h1 style="margin-top:75px;">We're Very Social</h1>
-        <p>Need anything? Got Questions? Get in touch.</p>
         <br />
-        <a href="https://www.instagram.com/druckdruckgoosejewelry/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i><p>@druckdruckgoosejewelry</p></a>
         <br />
-        <a href="mailto:contact@druckdruckgoose.com?subject=Druck%20Druck%20Goose%20Inquiry" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i><p>contact@druckdruckgoose.com</p></a>
+        <h1 style="margin-top:75px;">Get In Touch</h1>
+        <p>Need anything? Got Questions? Contact us.</p>
+        <br />
+        <div class="socialbutton" style="border-radius: 1000px; border: 2px solid #303030; width:70px; height:70px; padding-top:15px; float:left; margin-left:45%;">
+            <a class="icon" style="font-size: 50px;" href="https://www.instagram.com/druckdruckgoosejewelry/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="socialbutton" style="border-radius: 1000px; border: 2px solid #303030; width: 70px; height: 70px; padding-top: 15px; float:right; margin-right:45%;">
+            <a class="icon" style="font-size:50px;" href="mailto:contact@druckdruckgoose.com?subject=Druck%20Druck%20Goose%20Inquiry" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -77,27 +86,20 @@
         <p>That's all folks</p>
     </center>
     <script>
-        var countDownDate = new Date("Aug 31, 2023 14:30:00").getTime();
+        slideshow = document.getElementById("slideshow");
+        current = 1;
 
-        var x = setInterval(function () {
-
-            var now = new Date().getTime();
-
-            var distance = countDownDate - now;
-
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            //document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-
-            if (distance < 0) {
-                clearInterval(x);
-                //document.getElementById("demo").innerHTML = "Fall drop out now!";
+        setInterval(function () {
+            slideshow.src = "backgrounds/" + current + ".png";
+            if (current < 4) {
+                current = current + 1;
+            } else if (current == 4) {
+                current = 1;
             }
-        }, 1000);
+            else {
+                current = 1;
+            }
+        }, 8000);
     </script>
 </body>
 </html>
